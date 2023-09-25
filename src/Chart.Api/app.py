@@ -30,13 +30,18 @@ def generate_chart():
         data_points = data['data']
         areas = data['categories']
         title = data['title']
+        
+        if 'size' not in data:
+            size = [6, 6]  # Default size
+        else:
+            size = data['size']
 
         N = len(areas)
         theta = np.linspace(0.0, 2 * np.pi, N, endpoint=False)
         radii = data_points
         width = np.pi / 4 * np.ones(N)
 
-        fig, ax = plt.subplots(figsize=(6, 6), subplot_kw={
+        fig, ax = plt.subplots(figsize=size, subplot_kw={
                                'projection': 'polar'})
         bars = ax.bar(theta, radii, width=width, bottom=0.0,
                       align='center', edgecolor='gray', linewidth=0.5)
@@ -91,8 +96,13 @@ def draw_ikigai():
         labels = data['labels']
         overlap_labels = data['overlap']
         title = data['title']
+        
+        if 'size' not in data:
+            size = [6, 6]  # Default size
+        else:
+            size = data['size']
 
-        fig, ax = plt.subplots(figsize=(10, 10))
+        fig, ax = plt.subplots(figsize=size)
 
         # Define circle radius and centers for a diagonal orientation
         r = 1.25
@@ -159,13 +169,18 @@ def generate_chartb():
         data_points = data['data']
         areas = data['categories']
         title = data['title']
+        
+        if 'size' not in data:
+            size = [6, 6]  # Default size
+        else:
+            size = data['size']
 
         N = len(areas)
         theta = np.linspace(0.0, 2 * np.pi, N, endpoint=False)
         radii = data_points
         width = np.pi / 4 * np.ones(N)
 
-        fig, ax = plt.subplots(figsize=(6, 6), subplot_kw={
+        fig, ax = plt.subplots(figsize=size, subplot_kw={
                                'projection': 'polar'})
         bars = ax.bar(theta, radii, width=width, bottom=0.0,
                       align='center', edgecolor='gray', linewidth=0.5)
@@ -223,8 +238,13 @@ def draw_ikigaib():
         labels = data['labels']
         overlap_labels = data['overlap']
         title = data['title']
+        
+        if 'size' not in data:
+            size = [6, 6]  # Default size
+        else:
+            size = data['size']
 
-        fig, ax = plt.subplots(figsize=(10, 10))
+        fig, ax = plt.subplots(figsize=size)
 
         # Define circle radius and centers for a diagonal orientation
         r = 1.25
@@ -294,13 +314,18 @@ def generate_chart_url():
         data_points = data['data']
         areas = data['categories']
         title = data['title']
+        
+        if 'size' not in data:
+            size = [6, 6]  # Default size
+        else:
+            size = data['size']
 
         N = len(areas)
         theta = np.linspace(0.0, 2 * np.pi, N, endpoint=False)
         radii = data_points
         width = np.pi / 4 * np.ones(N)
 
-        fig, ax = plt.subplots(figsize=(6, 6), subplot_kw={
+        fig, ax = plt.subplots(figsize=size, subplot_kw={
                                'projection': 'polar'})
         bars = ax.bar(theta, radii, width=width, bottom=0.0,
                       align='center', edgecolor='gray', linewidth=0.5)
@@ -354,7 +379,12 @@ def draw_ikigai_url():
         overlap_labels = data['overlap']
         title = data['title']
 
-        fig, ax = plt.subplots(figsize=(10, 10))
+        if 'size' not in data:
+            size = [6, 6]  # Default size
+        else:
+            size = data['size']
+
+        fig, ax = plt.subplots(figsize=size)
 
         # Define circle radius and centers for a diagonal orientation
         r = 1.25
